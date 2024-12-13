@@ -10,29 +10,31 @@ const OurServices = () => {
         <h1 className="text-4xl font-semibold">Our Services </h1>
       </div>
       {/* Icons Section */}
-      <div
-        className="grid cursor-pointer 
-      grid-cols-2 md:grid-cols-4 \
-      gap-12 mt-12 ">
-        <div className="flex hover:text-slate-600  justify-center items-center gap-3">
-          <FaMobileAlt className="text-2xl" />
-          <p className="text-xl font-semibold ">Online Booking</p>
-        </div>
-        <div className="flex justify-center items-center hover:text-slate-600 gap-3">
-          <IoFastFoodOutline className="text-2xl" />
-          <p className="text-xl  font-semibold">Fast Food</p>
-        </div>
-        <div className="flex justify-center items-center hover:text-slate-600 gap-3">
-          <MdOutlineFoodBank className="text-2xl" />
-          <p className="text-xl font-semibold ">Healthy Food</p>
-        </div>
-        <div className="flex justify-center items-center hover:text-slate-600 gap-3">
-          <CiDeliveryTruck className="text-2xl" />
-          <p className="text-xl font-semibold ">Delivery</p>
-        </div>
-      </div>
+      <Icons />
     </section>
   );
 };
+
+function Icons() {
+  return (
+    <div
+      className="grid cursor-pointer 
+grid-cols-2 md:grid-cols-4 \
+gap-12 mt-12 ">
+      <Icon Icon={FaMobileAlt} title="Online Booking" />
+      <Icon Icon={IoFastFoodOutline} title="Fast Food" />
+      <Icon Icon={MdOutlineFoodBank} title="Online Booking" />
+      <Icon Icon={CiDeliveryTruck} title="Online Booking" />
+    </div>
+  );
+}
+function Icon({ Icon, title }) {
+  return (
+    <div className="flex hover:text-slate-600  justify-center items-center gap-3">
+      <Icon className="text-2xl" />
+      <p className="text-xl font-semibold ">{title}</p>
+    </div>
+  );
+}
 
 export default OurServices;
